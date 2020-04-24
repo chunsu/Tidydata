@@ -21,15 +21,15 @@ we learned that there were 30 participants (subjects), performing 6 types of act
 
 -  `test_X.txt` and `train_X.txt` are the measured values and to be joined together as the assignment asked
 
--  ?features.txt? is 561-row long, therefore is the variable list to be used as colomn names for the measured data
+-  `features.txt` is 561-row long, therefore is the variable list to be used as colomn names for the measured data
 
--  ?Y_test.txt? and ?Y_train.txt? each only contains 6 levels (1~6), indicating they are the activity index
+-  `Y_test.txt` and `Y_train.txt` each only contains 6 levels (1~6), indicating they are the activity index
 
--  ?activity_labels.txt? is a 6-row long desciptive name list. This is should replace the above activity index
+-  `activity_labels.txt` is a 6-row long desciptive name list. This is should replace the above activity index
 
--  ?subject_test.txt? and ?subject_train.txt? each contains 30 levels (1~30), indicating they are subject index
+-  `subject_test.txt` and `subject_train.txt` each contains 30 levels (1~30), indicating they are subject index
 
--  I see no obvious use of ?Inertial Signals? folders
+-  I see no obvious use of `Inertial Signals` folders
 
 
 
