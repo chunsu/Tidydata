@@ -9,7 +9,7 @@ Assignment submitted by Chunsu Xu
 
 
 ## About function `run_analysis.R`
-This is a R scrip extracting raw/messy data from UCI 2012 smartphones data set, and it returns a tidy data saved as ?tidydata.txt?. link for the raw data: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The script requires downloaded data folder ?UCI HAR Dataset? in current R working directory.
+This is a R scrip extracting raw/messy data from UCI 2012 smartphones data set, and it returns a tidy data saved as `tidydata.txt`. Link for the raw data: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The script requires downloaded data folder ?UCI HAR Dataset? in current R working directory.
 
 
 
