@@ -33,16 +33,14 @@ we learned that there were 30 participants (subjects), performing 6 types of act
 
 
 
-How to read the tidy data
-=========================
+## How to read the tidy data
 address <- "https://s3.amazonaws.com/coursera-uploads/user-longmysteriouscode/asst-3/massivelongcode.txt"
 address <- sub("^https", "http", address)
 data <- read.table(url(address), header = TRUE) 
 View(data)
 
 
-Notes: 
-======
+## Notes: 
 1. I did not decompose the variable names. It?s tempting to treat below 4 variables as 4 values of the same variable. However, I do not understand what does ?Autorregresion coefficients with Burg order equal to 4? mean and therefore I treat them as independent measures.
 
    tBodyAcc-arCoeff()-X,1
@@ -55,9 +53,8 @@ Notes:
 
 
 
-Reference:
-========
-tidy data principle and some tips about this assignment
+## Reference:
+Tidy data principle and some tips about this assignment
 
 [1] Hadley Wickham. Tidy data. The Journal of Statistical Software, vol. 59, 2014.
 
