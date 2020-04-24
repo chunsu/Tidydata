@@ -1,25 +1,25 @@
 # Tidydata
-==================================================================
+
+
 Getting and Cleaning Data Course Project
 Version 1.0
-==================================================================
+
+
 Assignment submitted by Chunsu Xu
 
 
-About function ?run_analysis.R?
-==============================
+## About function `run_analysis.R`
 This is a R scrip extracting raw/messy data from UCI 2012 smartphones data set, and it returns a tidy data saved as ?tidydata.txt?. link for the raw data: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones). The script requires downloaded data folder ?UCI HAR Dataset? in current R working directory.
 
 
 
-(Before reading data, we have to) understand the experiment design
-==================================================================
+## (Before reading data, we have to) understand the experiment design
 we learned that there were 30 participants (subjects), performing 6 types of activities when 561 variables were measured/derived from the signals generated from the accelarator and gyroscope inside the smartphone the subjects were wearing. With these information in mind, I first inspected all txt files in a text editor, to understand what each file is about
 
 
-The function requires the following files:
-==========================================
--  ?test_X.txt? and ?train_X.txt? are the measured values and to be joined together as the assignment asked
+## The function requires the following files:
+
+-  `test_X.txt` and `train_X.txt` are the measured values and to be joined together as the assignment asked
 
 -  ?features.txt? is 561-row long, therefore is the variable list to be used as colomn names for the measured data
 
