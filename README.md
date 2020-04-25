@@ -34,6 +34,7 @@ we learned that there were 30 participants (subjects), performing 6 types of act
 - `selected_name` and `selected_name_id` are dataframes containing the names and the index numbers of measurements on the mean and standard deviation as required by assignment task no.2
 - `selected_data` is a dataframe with the measurements on the mean and standard deviation as required by assignment task no.2
 - `all_labels` is a dataframe containing the type of activity for each observation row
+- `subject` is a dataframe containing the participant's subject id for each observation row
 - `tidydata` is the final product dataframe containing the tidy data as required by task no.5 
 
 
