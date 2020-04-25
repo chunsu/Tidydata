@@ -1,6 +1,6 @@
-# DATA DICTIONARY - run_analysis.r
+                                          # the code book for run_analysis.r
 ## Input variables
-- `activity_labels`
+- `activity_labels`  types of activity conducted by the subject during the measurement
 1. WALKING				
 2. WALKING_UPSTAIRS
 3. WALKING_DOWNSTAIRS
@@ -9,6 +9,7 @@
 6. LAYING			
 
 - `test_X` and `train_X`
+
 ## Variables generated:
 - `alldata` is a dataframe with combined measurements from test and training datasets
 - `colname` and `colname_new` are dataframes containing all the names of 561 measurements. The latter makes sure all names are unique for downstream processing
