@@ -48,10 +48,10 @@ View(data)
 ## Notes: 
 1. I did not decompose the variable names. It?s tempting to treat below 4 variables as 4 values of the same variable. However, I do not understand what does ?Autorregresion coefficients with Burg order equal to 4? mean and therefore I treat them as independent measures.
 
-   tBodyAcc-arCoeff()-X,1
-   tBodyAcc-arCoeff()-X,2
-   tBodyAcc-arCoeff()-X,3
-   tBodyAcc-arCoeff()-X,4
+   tBodyAcc-arCoeff()-X,1                                                                                                            
+   tBodyAcc-arCoeff()-X,2                                                                                             
+   tBodyAcc-arCoeff()-X,3                                                                               
+   tBodyAcc-arCoeff()-X,4                                                                        
 
 2. I choose wide form for generating the tidydata.txt. Please refer David Hood for discussion about wide or narrow/long form
 
