@@ -1,4 +1,4 @@
-                                          # the code book for run_analysis.r
+#                                             the code book for run_analysis.r
 ## Input variables
 - `activity_labels`  types of activity conducted by the subject during the measurement
 1. WALKING				
