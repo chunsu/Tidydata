@@ -10,11 +10,11 @@ The script requires downloaded data folder `UCI HAR Dataset` in current R workin
 
 
 
-## (Before reading data, we have to) understand the experiment design
-we learned that there were 30 participants (subjects), performing 6 types of activities when 561 variables were measured/derived from the signals generated from the accelarator and gyroscope inside the smartphone the subjects were wearing. With these information in mind, I first inspected all txt files in a text editor, to understand what each file is about
+## Experimental design
+we learned that there were 30 participants (subjects), performing 6 types of activities when 561 variables were measured/derived from the signals generated from the accelarator and gyroscope inside the smartphone the subjects were wearing. With these information in mind, I first inspected all txt files in a text editor, and cocluded the following files are required for the assignment.
 
 
-## The function requires the following files:
+## Files required:
 
 -  `test_X.txt` and `train_X.txt` are the measured values and to be joined together as the assignment asked
 
@@ -27,6 +27,14 @@ we learned that there were 30 participants (subjects), performing 6 types of act
 -  `subject_test.txt` and `subject_train.txt` each contains 30 levels (1~30), indicating they are subject index
 
 -  I see no obvious use of `Inertial Signals` folders
+
+## Variables generated:
+- `alldata` is a dataframe with combined measurements from test and training datasets
+- `colname` and `colname_new` are dataframes containing all the names of 561 measurements. The latter makes sure all names are unique for downstream processing
+- `selected_name` and `selected_name_id` are dataframes containing the names and the index numbers of measurements on the mean and standard deviation as required by assignment task no.2
+- `selected_data` is a dataframe with the measurements on the mean and standard deviation as required by assignment task no.2
+- `all_labels` is a dataframe containing the type of activity for each observation row
+- `tidydata` is the final product dataframe containing the tidy data as required by task no.5 
 
 
 
