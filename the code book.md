@@ -1,4 +1,4 @@
-#DATA DICTIONARY - run_analysis.r
+# DATA DICTIONARY - run_analysis.r
 ## Input variables
 ## Variables generated:
 - `alldata` is a dataframe with combined measurements from test and training datasets
