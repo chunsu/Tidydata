@@ -1,4 +1,4 @@
-# 					the code book for run_analysis.r
+# 					The code book for run_analysis.r
 ## Input variables
 - `activity_labels`  types of activity conducted by the subject during the measurement
 1. WALKING				
@@ -8,7 +8,7 @@
 5. STANDING			
 6. LAYING		
 - `test_X` and `train_X` values of measurements 
-- `features`  names of the measurements
+- `features`  names of the measurements. The complete list of variables of each feature vector for the tidydata is available in 'selected_features.txt'
 -  `test_Y` and `train_Y` label activity type with index 1 ~ 6
 -  `subject_test` and `subject_train` label participated subject with index 1 ~ 30
 
