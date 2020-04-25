@@ -46,7 +46,8 @@ run_analysis <- function(){
 		  		## ....
 		## we want "fBodyAccJerk.mean.." and "fBodyAccJerk.std.." but not "fBodyAccJerk-meanFreq" as the last is not a mean of measurement
 		selected_name <- grep('\\.(mean|std)\\.+',colname_new,value = TRUE)
-		alldata <- select(alldata, selected_name)
+		selected_name_id <- grep('\\.(mean|std)\\.+',colname_new)
+		selected_data <- select(alldata, selected_name_id)
 		
 
 ## Task 3: Uses descriptive activity names to name the activities in the dataset
@@ -67,23 +68,27 @@ run_analysis <- function(){
 		all_labels <- factor(all_labels, labels = activity)
 
 		## Add a new column to the dataframe
-		alldata <- mutate(alldata,activity_type = all_labels)
+		selected_data <- mutate(selected_data,activity_type = all_labels)
 
 
 ## Task 4: Appropriately label the dataset with descriptive variable names.
 
 		## Here we replace all abbreviations with complete words, such as "acceleration" with "Acc", "time_domain_signal" instead of "t"
-		colname_new <- sub("^t(.+)", "time_domain_signal_\\1", colname_new)
-		colname_new <- sub("Body|BodyBody", "body", colname_new)
-		colname_new <- sub("^f(.+)", "frequency_domain_signal_\\1", colname_new)
-		colname_new <- sub("Acc", "_acceleration_", colname_new)
-		colname_new <- sub("X", " on_x_axis", colname_new)
-		colname_new <- sub("Y", " on_y_axis", colname_new)
-		colname_new <- sub("Z", " on_z_axis", colname_new)
-		colname_new <- sub("Mag", "_magnitude_", colname_new)
-		colname_new <- sub("Gyro", "_gyroscope_", colname_new)
-		colname_new <- sub("angle.(.*)\\.(.*)\\.", "angle_between_\\1 and \\2", colname_new)
-		colnames(alldata)[1:561] = colname_new
+		selected_name <- sub("^(f|t)(.+)(mean|std)","\\3_ \\1 \\2", selected_name)
+		selected_name <- sub("std", "standard_deviation_of", selected_name)
+		selected_name <- sub(" t ", "time_domain_signal", selected_name)
+		selected_name <- sub("Body|BodyBody", "_body", selected_name)
+		selected_name <- sub(" f ", "frequency_domain_signal", selected_name)
+		selected_name <- sub("Acc", "_acceleration", selected_name)
+		selected_name <- sub("Jerk", "_jeck", selected_name)
+		selected_name <- sub("X", "_on_x_axis", selected_name)
+		selected_name <- sub("Y", "_on_y_axis", selected_name)
+		selected_name <- sub("Z", "_on_z_axis", selected_name)
+		selected_name <- sub("Mag", "_magnitude", selected_name)
+		selected_name <- sub("Gyro", "_gyroscope", selected_name)
+		selected_name <- sub("\\.+", "", selected_name)
+		#selected_name <- sub("angle.(.*)\\.(.*)\\.", "angle_between_\\1 and \\2", selected_name)
+		colnames(selected_data)[1:length(selected_name_id)] = selected_name
 
 		
 ## Task 5: From the dataset in step 4, creates a second, independent tidy dataset with the average of each variable for each activity and each subject.
@@ -95,8 +100,8 @@ run_analysis <- function(){
 		list(mean = mean, median = median)
 
 		## Add subject column to the dataframe and group data frame with subject and activity_type
-		alldata <- mutate(alldata, subject = subject)  
-		ff <- group_by(alldata,subject,activity_type) 
+		selected_data <- mutate(selected_data, subject = subject)  
+		ff <- group_by(selected_data,subject,activity_type) 
 
 		## Generate a tidydata data frame and save as a txt file
 		tidydata <- summarise_all(ff,funs(mean)) 
