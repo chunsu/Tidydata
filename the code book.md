@@ -1,5 +1,5 @@
-
-
+#DATA DICTIONARY - run_analysis.r
+## Input variables
 ## Variables generated:
 - `alldata` is a dataframe with combined measurements from test and training datasets
 - `colname` and `colname_new` are dataframes containing all the names of 561 measurements. The latter makes sure all names are unique for downstream processing
