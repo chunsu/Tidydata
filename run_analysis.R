@@ -3,7 +3,6 @@
 
 ## Important: the function requires the downloaded data folder 'UCI HAR Dataset' in the current R working directory
 
-
 run_analysis <- function(){
 
 
@@ -89,6 +88,7 @@ run_analysis <- function(){
 		selected_name <- sub("\\.+", "", selected_name)
 		#selected_name <- sub("angle.(.*)\\.(.*)\\.", "angle_between_\\1 and \\2", selected_name)
 		colnames(selected_data)[1:length(selected_name_id)] = selected_name
+		write.table(selected_name,'selected_features.txt')
 
 		
 ## Task 5: From the dataset in step 4, creates a second, independent tidy dataset with the average of each variable for each activity and each subject.
