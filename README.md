@@ -40,7 +40,7 @@ we learned that there were 30 participants (subjects), performing 6 types of act
 
 
 ## How to read the tidy data
-address <- "https://s3.amazonaws.com/coursera-uploads/user-longmysteriouscode/asst-3/massivelongcode.txt"
+address <- "https://coursera-assessments.s3.amazonaws.com/assessments/1587855484523/81e97d5b-25fb-43bb-b6bc-ca38b7eafa6c/tidydata.txt"
 address <- sub("^https", "http", address)
 data <- read.table(url(address), header = TRUE) 
 View(data)
