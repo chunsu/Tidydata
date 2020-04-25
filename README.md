@@ -1,6 +1,4 @@
-## Tidydata
-
-Getting and Cleaning Data Course Project
+## Getting and Cleaning Data Course Project
 
 Assignment submitted by Chunsu Xu
 
