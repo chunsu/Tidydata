@@ -86,7 +86,7 @@ run_analysis <- function(){
 		selected_name <- sub("Mag", "_magnitude", selected_name)
 		selected_name <- sub("Gyro", "_gyroscope", selected_name)
 		selected_name <- sub("\\.+", "", selected_name)
-		#selected_name <- sub("angle.(.*)\\.(.*)\\.", "angle_between_\\1 and \\2", selected_name)
+	
 		colnames(selected_data)[1:length(selected_name_id)] = selected_name
 		write.table(selected_name,'selected_features.txt')
 
