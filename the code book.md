@@ -6,9 +6,12 @@
 3. WALKING_DOWNSTAIRS
 4. SITTING
 5. STANDING			
-6. LAYING			
+6. LAYING		
+- `test_X` and `train_X` values of measurements 
+- `features`  names of the measurements
+-  `test_Y` and `train_Y` label activity type with index 1 ~ 6
+-  `subject_test` and `subject_train` label participated subject with index 1 ~ 30
 
-- `test_X` and `train_X`
 
 ## Variables generated:
 - `alldata` is a dataframe with combined measurements from test and training datasets
@@ -17,6 +20,7 @@
 - `selected_data` is a dataframe with the measurements on the mean and standard deviation as required by assignment task no.2
 - `all_labels` is a dataframe containing the type of activity for each observation row
 - `subject` is a dataframe containing the participant's subject id for each observation row
+- `ff` is the selected_data group by subject and activity_type
 - `tidydata` is the final product dataframe containing the tidy data as required by task no.5 
 
 
