@@ -22,7 +22,7 @@ run_analysis <- function(){
 		library(dplyr)
 		## Note: downstream processing needs spliting string value, so here we turn off the stringAsFactor argument
 		features <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactor = FALSE)
-		colname <- as.vector(features[,2])
+		colname <- features[,2]
 
 		## Note: during the downstream processing, mutate function treats some of the feature names as duplicates, so here we make them unique
 		## E.g. "fBodyAcc-bandsEnergy()-17,24" "fBodyAcc-bandsEnergy()-25,32" "fBodyAcc-bandsEnergy()-33,40" considered duplicates
@@ -44,7 +44,7 @@ run_analysis <- function(){
 		## Import activity index-label pair from file "activity_labels.txt"
 		activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 
-		activity <- as.vector(activity_labels[,2])
+		activity <- activity_labels[,2]
 
 		## Import activity index lable
 		test_y  <- read.table("./UCI HAR Dataset/test/Y_test.txt")
