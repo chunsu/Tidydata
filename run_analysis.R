@@ -13,8 +13,8 @@ run_analysis <- function(){
 
 		## Note: before read data into data frame, visual inspection of the txt file and found it's in fix width. 
 		## Count the length of the value and specify the width using read_fwf function 
-		test_X  <- read.fwf("./UCI HAR Dataset/test/X_test.txt",   rep(16,1,561), header = FALSE)
-		train_X <- read.fwf("./UCI HAR Dataset/train/X_train.txt", rep(16,1,561), header = FALSE)
+		test_X  <- read.table("./UCI HAR Dataset/test/X_test.txt")
+		train_X <- read.table("./UCI HAR Dataset/train/X_train.txt")
 
 		## stack the two data frames together into new data frame "alldata" 
 		alldata <- rbind(test_X,train_X)
