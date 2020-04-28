@@ -22,7 +22,7 @@ run_analysis <- function(){
 		library(dplyr)
 		## Note: downstream processing needs spliting string value, so here we turn off the stringAsFactor argument
 		features <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactor = FALSE)
-		colname <- features[,2]
+		colname <- as.vector(features[,2])
 
 		## Note: during the downstream processing, mutate function treats some of the feature names as duplicates, so here we make them unique
 		## E.g. "fBodyAcc-bandsEnergy()-17,24" "fBodyAcc-bandsEnergy()-25,32" "fBodyAcc-bandsEnergy()-33,40" considered duplicates
@@ -42,15 +42,13 @@ run_analysis <- function(){
 ## Task 3: Uses descriptive activity names to name the activities in the dataset
 
 		## Import activity index-label pair from file "activity_labels.txt"
-		activity_labels <- read.delim("./UCI HAR Dataset/activity_labels.txt", header = FALSE, stringsAsFactor = FALSE)
-		activity <- strsplit(activity_labels[,1],split="[0-9] ") 
+		activity_labels <- read.table("./UCI HAR Dataset/activity_labels.txt")
 
-		## Recall previous defined function ##SecondElement <- function(x){x[2]}
-		activity <- sapply(activity,SecondElement)
+		activity <- as.vector(activity_labels[,2])
 
 		## Import activity index lable
-		test_y  <- read.delim("./UCI HAR Dataset/test/Y_test.txt",   sep ="\n", header = FALSE)
-		train_y <- read.delim("./UCI HAR Dataset/train/Y_train.txt", sep ="\n", header = FALSE)
+		test_y  <- read.table("./UCI HAR Dataset/test/Y_test.txt")
+		train_y <- read.table("./UCI HAR Dataset/train/Y_train.txt")
 		
 		## Replace index label with actual activity label
 		all_labels <- c(test_y[,1],train_y[,1])
@@ -84,8 +82,8 @@ run_analysis <- function(){
 ## Task 5: From the dataset in step 4, creates a second, independent tidy dataset with the average of each variable for each activity and each subject.
 		
 		## Import subject index
-		subject_test  <- read.delim("./UCI HAR Dataset/test/subject_test.txt",   sep="\n", header = FALSE)
-		subject_train <- read.delim("./UCI HAR Dataset/train/subject_train.txt", sep="\n", header = FALSE)
+		subject_test  <- read.table("./UCI HAR Dataset/test/subject_test.txt")
+		subject_train <- read.table("./UCI HAR Dataset/train/subject_train.txt")
 		subject <- c(subject_test[,1],subject_train[,1])	
 		list(mean = mean, median = median)
 
