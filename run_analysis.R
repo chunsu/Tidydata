@@ -11,8 +11,6 @@ run_analysis <- function(){
 		}
 ## Task 1: Merges the training and the test sets to create one dataset.
 
-		## Note: before read data into data frame, visual inspection of the txt file and found it's in fix width. 
-		## Count the length of the value and specify the width using read_fwf function 
 		test_X  <- read.table("./UCI HAR Dataset/test/X_test.txt")
 		train_X <- read.table("./UCI HAR Dataset/train/X_train.txt")
 
@@ -23,16 +21,8 @@ run_analysis <- function(){
 ## Task 2: Extracts only the measurements on the mean and standard deviation for each measurement. 
 		library(dplyr)
 		## Note: downstream processing needs spliting string value, so here we turn off the stringAsFactor argument
-		features <- read.delim("./UCI HAR Dataset/features.txt", sep="\n", header = FALSE, stringsAsFactor = FALSE)
-
-		## The values started with extra order number, so get rid of it 
-				## > head(features, 2)
-				## 1 1 tBodyAcc-mean()-X
-				## 2 2 tBodyAcc-mean()-Y
-		colname <- strsplit(features[,1],split="[0-9] ") 
-		SecondElement <- function(x){x[2]}
-		colname <- sapply(colname,SecondElement)
-		## Note: Above 3 lines can be done in one regular expression: sub("[0-9 ]+(\\w+)", "\\1", features[,1])
+		features <- read.table("./UCI HAR Dataset/features.txt", stringsAsFactor = FALSE)
+		colname <- features[,2]
 
 		## Note: during the downstream processing, mutate function treats some of the feature names as duplicates, so here we make them unique
 		## E.g. "fBodyAcc-bandsEnergy()-17,24" "fBodyAcc-bandsEnergy()-25,32" "fBodyAcc-bandsEnergy()-33,40" considered duplicates
